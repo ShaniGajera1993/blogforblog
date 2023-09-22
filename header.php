@@ -36,7 +36,7 @@
                         </div>
                     </form>
                     <div class="navbar-nav ms-2">
-                        <button id="loginbtn" class="btn btn-primary" type="button">Login</button>
+                        <a href="login.php" id="loginbtn" class="btn btn-primary" type="button">Login</a>
                     </div>
                 </div>
             </div>
