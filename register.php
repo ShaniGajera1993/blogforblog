@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include("header.php") ?>
+    <?php include("includes/header.php") ?>
     <div class="container blog-css">
         <div class="form-container">
             <form>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <?php include("footer.php") ?>
+    <?php include("includes/footer.php") ?>
 </body>
 
 </html>

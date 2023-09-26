@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include("header.php")?>
+    <?php include("includes/header.php")?>
     <div class="container blog-css">
         <div class="row">
             <div class="col-sm-8 p-4">
@@ -147,6 +147,6 @@
         </div>
     </div>
 
-    <?php include("footer.php")?>
+    <?php include("includes/footer.php")?>
 </body>
 </html>

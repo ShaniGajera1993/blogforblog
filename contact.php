@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include("header.php") ?>
+    <?php include("includes/header.php") ?>
 
     <section class="main-content-w3layouts-agileits">
 
@@ -51,7 +51,7 @@
 				</div>
 			</section>
             
-    <?php include("footer.php") ?>
+    <?php include("includes/footer.php") ?>
 </body>
 
 </html>
