@@ -80,7 +80,7 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-
+                        <div class="huge"><?php echo $count_b_categories ?></div>
 
                         <div>Blogs Categories</div>
 
@@ -90,13 +90,13 @@
 
             </div><!-- panel-heading Ends -->
 
-
+            <a href="index.php?view_categories">
 
             <div class="panel-footer"><!-- panel-footer Starts -->
 
                 <span class="pull-left"> View Details </span>
 
-                <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                 <div class="clearfix"></div>
 

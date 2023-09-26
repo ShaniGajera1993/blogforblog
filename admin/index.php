@@ -1,3 +1,11 @@
+<?php
+include("includes/db.php");
+
+$get_b_categories = "SELECT * FROM categories";
+$run_b_categories = mysqli_query($conn, $get_b_categories);
+$count_b_categories = mysqli_num_rows($run_b_categories);
+
+?>
 <!DOCTYPE html>
 <html>
 <?php include("includes/header.php") ?>
@@ -19,6 +27,25 @@
 
                 }
 
+                if (isset($_GET['insert_categories'])) {
+
+                    include("insert_categories.php");
+                }
+
+                if (isset($_GET['view_categories'])) {
+
+                    include("view_categories.php");
+                }
+
+                if (isset($_GET["edit_categories"])) {
+
+                    include('edit_categories.php');
+                }
+
+                if (isset($_GET["delete_categories"])) {
+
+                    include('delete_categories.php');
+                }
                 ?>
 
             </div><!-- container-fluid Ends -->
