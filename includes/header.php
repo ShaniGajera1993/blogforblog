@@ -15,14 +15,6 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ms-2">
                         <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Tricks</a>
-                                <a href="#" class="dropdown-item">Promotion</a>
-                                <a href="#" class="dropdown-item">Entertainment</a>
-                            </div>
-                        </div>
                         <a href="about.php" class="nav-item nav-link">About</a>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
                         <a href="terms.php" class="nav-item nav-link">Terms of Use</a>

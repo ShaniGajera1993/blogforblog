@@ -174,11 +174,11 @@
                 <ul id="p_cat" class="collapse">
 
                     <li>
-                        <a href="#"> Insert Blog Category </a>
+                        <a href="index.php?insert_categories"> Insert Blog Category </a>
                     </li>
 
                     <li>
-                        <a href="#"> View Blog Categories </a>
+                        <a href="index.php?view_categories"> View Blog Categories </a>
                     </li>
 
 
