@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include("header.php") ?>
+    <?php include("includes/header.php") ?>
 
     <div class="container text-center blog-css">
         <h2><strong>Privacy Policy</strong></h2><br>
@@ -309,7 +309,7 @@
         </div>
     </div>
 
-    <?php include("footer.php") ?>
+    <?php include("includes/footer.php") ?>
 </body>
 
 </html>
