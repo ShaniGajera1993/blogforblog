@@ -27,9 +27,6 @@
                                     class="bi-search"></i></button>
                         </div>
                     </form>
-                    <div class="navbar-nav ms-2">
-                        <a href="login.php" id="loginbtn" class="btn btn-primary" type="button">Login</a>
-                    </div>
                 </div>
             </div>
         </nav>
