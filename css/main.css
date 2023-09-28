@@ -89,3 +89,8 @@ body a {
     background-color: #A30000;
     border: 2px solid #A30000;
 }
+
+.custom-card-image {
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
