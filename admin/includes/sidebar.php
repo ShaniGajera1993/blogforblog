@@ -17,7 +17,7 @@
 
         </button><!-- navbar-ex1-collapse Ends -->
 
-        <a class="navbar-brand" href="#">BlogForBlog Admin</a>
+        <a class="navbar-brand" href="index.php?dashboard">BlogForBlog Admin</a>
 
 
     </div><!-- navbar-header Ends -->
@@ -28,7 +28,7 @@
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- dropdown-toggle Starts -->
 
-                <i class="fa fa-user"></i>
+                <i class="fa fa-user"> <?php echo $admin_firstname; ?></i>
 
                 <b class="caret"></b>
 
@@ -39,7 +39,7 @@
 
                 <li><!-- li Starts -->
 
-                    <a href="#">
+                    <a href="index.php?edit_users=<?php echo $admin_id; ?>">
 
                         <i class="fa fa-fw fa-user"></i> Profile
 
@@ -52,7 +52,7 @@
 
                     <a href="#">
 
-                        <i class="fa fa-fw fa-envelope"></i> Blogs
+                        <i class="fa fa-fw fa-envelope"></i> Comments
 
                         <span class="badge">
                             <!-- add blog count here -->
@@ -67,10 +67,10 @@
 
                     <a href="#">
 
-                        <i class="fa fa-fw fa-gear"></i> Users
+                        <i class="fa fa-fw fa-newspaper-o"></i> Blog
 
                         <span class="badge">
-                            <!-- add user count here -->
+                            <!-- add blog count here -->
                         </span>
 
 
@@ -78,14 +78,15 @@
 
                 </li><!-- li Ends -->
 
+            
                 <li><!-- li Starts -->
 
-                    <a href="#">
+                    <a href="index.php?view_categories">
 
-                        <i class="fa fa-fw fa-gear"></i> Blog Categories
+                        <i class="fa fa-fw fa-list-alt"></i> Blog Categories
 
                         <span class="badge">
-                            <!-- add category count here -->
+                        <?php echo $count_b_categories ?>
                         </span>
 
 
@@ -101,7 +102,7 @@
 
                 <li><!-- li Starts -->
 
-                    <a href="#">
+                    <a href="index.php?logout">
 
                         <i class="fa fa-fw fa-power-off"> </i> Log Out
 
@@ -196,24 +197,11 @@
 
             </li>
 
-            <li>
-
-                <a href="#">
-
-                    <i class="fa fa-fw fa-user"></i> View Users
-
-                </a>
-
-            </li>
-
-
-
-
             <li><!-- li Starts -->
 
                 <a href="#" data-toggle="collapse" data-target="#users">
 
-                    <i class="fa fa-fw fa-gear"></i> Users
+                    <i class="fa fa-fw fa-user"></i> Users
 
                     <i class="fa fa-fw fa-caret-down"></i>
 
@@ -223,15 +211,15 @@
                 <ul id="users" class="collapse">
 
                     <li>
-                        <a href="#"> Insert User </a>
+                        <a href="index.php?insert_user"> Insert User </a>
                     </li>
 
                     <li>
-                        <a href="#"> View Users </a>
+                        <a href="index.php?view_users"> View Users </a>
                     </li>
 
                     <li>
-                        <a href="#"> Edit Profile </a>
+                        <a href="index.php?edit_users=<?php echo $admin_id; ?>"> Edit Profile </a>
                     </li>
 
                 </ul>
@@ -239,7 +227,7 @@
             </li><!-- li Ends -->
 
             <li>
-                <a href="#">
+                <a href="index.php?logout">
 
                     <i class="fa fa-fw fa-power-off"></i> Log Out
 

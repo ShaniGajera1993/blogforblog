@@ -1,62 +1,121 @@
 <?php
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
 include("includes/db.php");
 
-$get_b_categories = "SELECT * FROM categories";
-$run_b_categories = mysqli_query($conn, $get_b_categories);
-$count_b_categories = mysqli_num_rows($run_b_categories);
+if (!isset($_SESSION['admin_email'])) {
 
-?>
-<!DOCTYPE html>
-<html>
-<?php include("includes/header.php") ?>
+    echo "<script>window.open('login.php','_self')</script>";
 
-<body>
-    <div id="wrapper"><!-- wrapper Starts -->
+} else {
 
-        <?php include("includes/sidebar.php"); ?>
+    $admin_session = $_SESSION['admin_email'];
 
-        <div id="page-wrapper"><!-- page-wrapper Starts -->
+    $get_admin = "SELECT * from admin  where email='$admin_session'";
 
-            <div class="container-fluid"><!-- container-fluid Starts -->
+    $run_admin = mysqli_query($conn, $get_admin);
 
-                <?php
+    $row_admin = mysqli_fetch_array($run_admin);
 
-                if (isset($_GET['dashboard'])) {
+    $admin_id = $row_admin['id'];
 
-                    include("dashboard.php");
+    $admin_firstname = $row_admin['firstname'];
 
-                }
+    $admin_lastname = $row_admin['lastname'];
 
-                if (isset($_GET['insert_categories'])) {
+    $admin_email = $row_admin['email'];
 
-                    include("insert_categories.php");
-                }
+    $get_b_categories = "SELECT * FROM categories";
+    $run_b_categories = mysqli_query($conn, $get_b_categories);
+    $count_b_categories = mysqli_num_rows($run_b_categories);
 
-                if (isset($_GET['view_categories'])) {
+    $get_user_count = "SELECT * FROM admin";
+    $run_user_count = mysqli_query($conn, $get_user_count);
+    $count_user = mysqli_num_rows($run_user_count);
 
-                    include("view_categories.php");
-                }
+    ?>
+    <!DOCTYPE html>
+    <html>
+    <?php include("includes/header.php") ?>
 
-                if (isset($_GET["edit_categories"])) {
+    <body>
+        <div id="wrapper"><!-- wrapper Starts -->
 
-                    include('edit_categories.php');
-                }
+            <?php include("includes/sidebar.php"); ?>
 
-                if (isset($_GET["delete_categories"])) {
+            <div id="page-wrapper"><!-- page-wrapper Starts -->
 
-                    include('delete_categories.php');
-                }
-                ?>
+                <div class="container-fluid"><!-- container-fluid Starts -->
 
-            </div><!-- container-fluid Ends -->
+                    <?php
 
-        </div><!-- page-wrapper Ends -->
+                    if (isset($_GET['dashboard'])) {
 
-    </div><!-- wrapper Ends -->
+                        include("dashboard.php");
 
-    <?php include("includes/footer.php") ?>
+                    }
 
-</body>
+                    if (isset($_GET['insert_categories'])) {
+
+                        include("insert_categories.php");
+                    }
+
+                    if (isset($_GET['view_categories'])) {
+
+                        include("view_categories.php");
+                    }
+
+                    if (isset($_GET["edit_categories"])) {
+
+                        include('edit_categories.php');
+                    }
+
+                    if (isset($_GET["delete_categories"])) {
+
+                        include('delete_categories.php');
+                    }
+
+                    if (isset($_GET['insert_user'])) {
+
+                        include("insert_user.php");
+                    }
+
+                    if (isset($_GET['view_users'])) {
+
+                        include("view_users.php");
+                    }
+
+                    if (isset($_GET['edit_users'])) {
+
+                        include("edit_users.php");
+                    }
+
+                    if (isset($_GET['delete_users'])) {
+
+                        include("delete_users.php");
+                    }
+
+                    if (isset($_GET['logout'])) {
+
+                        include("logout.php");
+                    }
+
+                    ?>
+
+                </div><!-- container-fluid Ends -->
+
+            </div><!-- page-wrapper Ends -->
+
+        </div><!-- wrapper Ends -->
+
+        <?php include("includes/footer.php") ?>
+
+    </body>
 
 
-</html>
+    </html>
+
+<?php } ?>
