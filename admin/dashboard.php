@@ -169,8 +169,7 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-
-
+                        <div class="huge"><?php echo $count_user; ?></div>
                         <div>Users</div>
 
                     </div><!-- col-xs-9 text-right Ends -->
@@ -180,7 +179,7 @@
             </div><!-- panel-heading Ends -->
 
 
-
+            <a href="index.php?view_users">
             <div class="panel-footer"><!-- panel-footer Starts -->
 
                 <span class="pull-left"> View Details </span>
