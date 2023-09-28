@@ -37,7 +37,7 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-                        <div class="huge"> </div>
+                        <div class="huge"> <?php echo $count_blog; ?> </div>
 
                         <div>Blogs</div>
 
@@ -46,6 +46,8 @@
                 </div><!-- panel-heading row Ends -->
 
             </div><!-- panel-heading Ends -->
+
+            <a href="index.php?view_blogs">
 
             <div class="panel-footer"><!-- panel-footer Starts -->
 
@@ -80,7 +82,9 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-                        <div class="huge"><?php echo $count_b_categories ?></div>
+                        <div class="huge">
+                            <?php echo $count_b_categories ?>
+                        </div>
 
                         <div>Blogs Categories</div>
 
@@ -92,15 +96,15 @@
 
             <a href="index.php?view_categories">
 
-            <div class="panel-footer"><!-- panel-footer Starts -->
+                <div class="panel-footer"><!-- panel-footer Starts -->
 
-                <span class="pull-left"> View Details </span>
+                    <span class="pull-left"> View Details </span>
 
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
-                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-            </div><!-- panel-footer Ends -->
+                </div><!-- panel-footer Ends -->
 
             </a>
 
@@ -169,7 +173,9 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-                        <div class="huge"><?php echo $count_user; ?></div>
+                        <div class="huge">
+                            <?php echo $count_user; ?>
+                        </div>
                         <div>Users</div>
 
                     </div><!-- col-xs-9 text-right Ends -->
@@ -180,15 +186,15 @@
 
 
             <a href="index.php?view_users">
-            <div class="panel-footer"><!-- panel-footer Starts -->
+                <div class="panel-footer"><!-- panel-footer Starts -->
 
-                <span class="pull-left"> View Details </span>
+                    <span class="pull-left"> View Details </span>
 
-                <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+                    <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 
-                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-            </div><!-- panel-footer Ends -->
+                </div><!-- panel-footer Ends -->
 
             </a>
 
@@ -226,24 +232,75 @@
 
                             <tr>
                                 <th>#</th>
-                                <th>#</th>
-                                <th>#</th>
-                                <th>#</th>
-                                <th>#</th>
-                                <th>#</th>
-                                <th>#</th>
+                                <th>Author</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Image</th>
+                                <th>Tag</th>
+                                <th>Date</th>
                             </tr>
 
                         </thead><!-- thead Ends -->
 
                         <tbody><!-- tbody Starts -->
-                            <tr>
+                        
+                            <?php
 
-                                <td></td>
+                            $i = 0;
 
-                                <td>
+                            $view_blog = "SELECT * from blog WHERE author='$admin_firstname'";
 
-                                </td>
+                            $run_view_blog = mysqli_query($conn, $view_blog);
+
+                            while ($row_blog = mysqli_fetch_array($run_view_blog)) {
+
+                                $blog_id = $row_blog['id'];
+
+                                $blog_title = $row_blog['title'];
+
+                                $blog_category = $row_blog['category'];
+
+                                $blog_image = $row_blog['image'];
+
+                                $blog_tag = $row_blog['tag'];
+
+                                $blog_date = $row_blog['date'];
+
+                                $i++;
+
+                                ?>
+
+                                <tr>
+
+                                    <td>
+                                        <?php echo $i; ?>
+                                    </td>
+
+                                    <td>
+                                        <?php echo $admin_firstname; ?>
+                                    </td>
+
+                                    <td>
+                                        <?php echo $blog_title; ?>
+                                    </td>
+
+                                    <td>
+                                        <?php echo $blog_category; ?>
+                                    </td>
+
+                                    <td><img src="images/<?php echo $blog_image; ?>" width="60" height="60"></td>
+
+                                    <td>
+                                        <?php echo $blog_tag; ?>
+                                    </td>
+
+                                    <td>
+                                        <?php echo $blog_date; ?>
+                                    </td>
+
+                                </tr>
+
+                            <?php } ?>
 
                         </tbody><!-- tbody Ends -->
 

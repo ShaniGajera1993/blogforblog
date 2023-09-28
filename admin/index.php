@@ -36,6 +36,10 @@ if (!isset($_SESSION['admin_email'])) {
     $run_user_count = mysqli_query($conn, $get_user_count);
     $count_user = mysqli_num_rows($run_user_count);
 
+    $get_blog_count = "SELECT * FROM blog";
+    $run_blog_count = mysqli_query($conn, $get_blog_count);
+    $count_blog = mysqli_num_rows($run_blog_count);    
+
     ?>
     <!DOCTYPE html>
     <html>
@@ -56,6 +60,26 @@ if (!isset($_SESSION['admin_email'])) {
 
                         include("dashboard.php");
 
+                    }
+
+                    if (isset($_GET['insert_blogs'])) {
+
+                        include("insert_blogs.php");
+                    }
+
+                    if (isset($_GET['view_blogs'])) {
+
+                        include("view_blogs.php");
+                    }
+
+                    if (isset($_GET['edit_blogs'])) {
+
+                        include("edit_blogs.php");
+                    }
+
+                    if (isset($_GET['delete_blogs'])) {
+
+                        include("delete_blogs.php");
                     }
 
                     if (isset($_GET['insert_categories'])) {

@@ -65,12 +65,12 @@
 
                 <li><!-- li Starts -->
 
-                    <a href="#">
+                    <a href="index.php?view_blogs">
 
                         <i class="fa fa-fw fa-newspaper-o"></i> Blog
 
                         <span class="badge">
-                            <!-- add blog count here -->
+                            <?php echo $count_blog; ?>
                         </span>
 
 
@@ -149,11 +149,11 @@
                 <ul id="products" class="collapse">
 
                     <li>
-                        <a href="#"> Insert Blogs </a>
+                        <a href="index.php?insert_blogs"> Insert Blogs </a>
                     </li>
 
                     <li>
-                        <a href="#"> View Blogs </a>
+                        <a href="index.php?view_blogs"> View Blogs </a>
                     </li>
 
 
