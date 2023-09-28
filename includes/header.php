@@ -2,6 +2,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/main.css">
+<link href="admin/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="m-2">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,7 +17,6 @@
                     <div class="navbar-nav ms-2">
                         <a href="index.php" class="nav-item nav-link active">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
                         <a href="terms.php" class="nav-item nav-link">Terms of Use</a>
                         <a href="privacy.php" class="nav-item nav-link">Privacy Policy</a>
                     </div>
