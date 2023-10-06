@@ -11,7 +11,7 @@
     <?php include("includes/header.php") ?>
     <div class="container blog-css">
         <div class="row">
-            <div class="col-sm-8 p-4">
+            <div class="col-md-8 p-4">
                 <div class="row row-cols-1 row-cols-md-2 g-3">
                     <?php
 
@@ -30,16 +30,10 @@
 
                         echo '<div class="col">
                                 <a href="blog.php?blog_id=' . $blog_id . '">
-                                <div class="card h-100">
-                                    <img src="admin/images/'. $blog_image . '" class="card-img-top" style="width:406px;height:250px" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">' . $blog_title . '</h5>
-                                    </div>
-                                    <div class="card-footer">
-                                    <div class="row">
-                                        <div class="col"><small class="text-muted"><i class="fa fa-user"></i> ' . $blog_author . '</small></div>
-                                        <div style="text-align: right;" class="col"><small class="text-muted"><i class="fa fa-clock-o"></i> ' . $blog_date . '</small></div>
-                                    </div>
+                                <div class="card" style="border:none;">
+                                    <img src="admin/images/'. $blog_image . '" class="card-img-top img-fluid img-responsive" style="width:406px;height:250px" alt="...">
+                                    <div class="card mt-3" style="border:none; color:black;">
+                                        <h6 class="card-title">' . $blog_title . '</h6>
                                     </div>
                                 </div>
                                 </a>
@@ -48,7 +42,7 @@
                     ?>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="row">
                     <?php include("includes/category.php"); ?>
                     <div class="col">
@@ -56,7 +50,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                    <img src="#" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -73,7 +67,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                    <img src="#" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -90,7 +84,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                    <img src="#" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">

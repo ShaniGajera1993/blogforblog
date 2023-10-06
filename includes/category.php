@@ -11,7 +11,7 @@
     <h5><strong>Categories</strong></h5><br>
     <ul class="list-group single">
         <?php
-        include("db.php");
+        include("admin/includes/db.php");
 
         $view_category = "SELECT * FROM categories";
 
