@@ -188,7 +188,7 @@ $b_cat_title = $row_b_category['category'];
 
                             <div class="col-md-6">
 
-                                <textarea name="blog_content" class="form-control" rows="15"><?php echo $b_content; ?></textarea>
+                                <textarea id="blog_content" name="blog_content" class="form-control" rows="15"><?php echo $b_content; ?></textarea>
 
                             </div>
 
@@ -235,16 +235,17 @@ if (isset($_POST['update'])) {
 
     $blog_category = $_POST['blog_category'];
 
-    $blog_image = $_FILES['blog_image']['name'];
-    $temp_name = $_FILES['blog_image']['tmp_name'];
+    if (!empty($_FILES['blog_image']['name'])) {
+        $blog_image = $_FILES['blog_image']['name'];
+        $temp_name = $_FILES['blog_image']['tmp_name'];
 
-    if (empty($blog_image)) {
-
-        $blog_image = $new_blog_image;
-
+        // Upload the new image
+        move_uploaded_file($temp_name, "images/$blog_image");
+    } else {
+        // If no new image is uploaded, retain the existing image
+        $blog_image = $b_image;
     }
-    move_uploaded_file($temp_name, "images/$blog_image");
-
+    
     $blog_tag = $_POST['blog_tag'];
 
     $blog_content = $_POST['blog_content'];
@@ -264,3 +265,14 @@ if (isset($_POST['update'])) {
 }
 
 ?>
+
+<script type="text/javascript">
+    // Initialize NicEdit
+    var editor = new nicEditor({ fullPanel: true }).panelInstance('blog_content');
+
+    // Fetch the HTML content from your PHP variable (e.g., $b_content)
+    var fetchedHTMLContent = '<?php echo addslashes($b_content); ?>';
+
+    // Set the fetched HTML content in the NicEdit editor
+    editor.setContent(fetchedHTMLContent);
+</script>

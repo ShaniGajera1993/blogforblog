@@ -39,9 +39,9 @@ if(isset($_GET['blog_id'])){
         <div class="row">
             <div class="col-sm-8 p-4">
                 <div class="blog-grid-top">
-                    <div class="blog_info_left_grid">
-								<img src="admin/images/<?php echo $blog_image;?>" class="img-fluid" alt="image not available" style="width:900px;height:300px">
-					</div>
+                    <div class="blog_info_left_grid" style="position: relative;">
+								<img src="admin/images/<?php echo $blog_image;?>" class="img-fluid rounded" alt="image not available" style="width:900px;height:400px">
+                    <div class="card-footer" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: rgba(255, 255, 255, 0.8); padding: 10px;">
                     <div class="row">
                         <div style="text-align: left;" class="col">
                             <i class="fa fa-user"></i> <?php echo $blog_author;?>
@@ -56,8 +56,10 @@ if(isset($_GET['blog_id'])){
                             <i class="fa fa-calendar"></i> <?php echo $blog_date;?>
                         </div>
                     </div>
-                    <br><h3><?php echo $blog_title;?></h3>
-                    <br><p><?php echo $blog_content;?></p>  
+                    </div>
+                    </div>
+                    <br><h4><?php echo $blog_title;?></h4>
+                <br><div style="font-size: 12px"><?php echo $blog_content;?></div>  
                 </div>
             </div>
             <div class="col-sm-4">

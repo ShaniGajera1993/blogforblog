@@ -90,7 +90,7 @@ body a {
     border: 2px solid #A30000;
 }
 
-.custom-card-image {
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+.custom-nav{
+    padding-left: 10px;
+    padding-right: 10px;;
 }

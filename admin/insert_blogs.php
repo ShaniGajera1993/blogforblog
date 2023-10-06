@@ -120,7 +120,7 @@
 
                         <div class="col-md-6">
 
-                            <textarea name="blog_content" class="form-control" rows="15"></textarea>
+                            <textarea name="blog_content" id="blog_content" class="form-control" rows="15"></textarea>
 
                         </div>
 

@@ -15,10 +15,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ms-2">
-                        <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <a href="about.php" class="nav-item nav-link">About</a>
-                        <a href="terms.php" class="nav-item nav-link">Terms of Use</a>
-                        <a href="privacy.php" class="nav-item nav-link">Privacy Policy</a>
+                        <a style="padding-left:10px;" href="index.php" class="nav-item nav-link active">Home</a>
+                        <a style="padding-left:10px;" href="about.php" class="nav-item nav-link">About</a>
+                        <a style="padding-left:10px;" href="terms.php" class="nav-item nav-link">Terms of Use</a>
+                        <a style="padding-left:10px;" href="privacy.php" class="nav-item nav-link">Privacy Policy</a>
                     </div>
                     <form class="d-flex ms-auto">
                         <div class="input-group">

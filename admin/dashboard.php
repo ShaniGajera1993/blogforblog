@@ -248,13 +248,15 @@
 
                             $i = 0;
 
-                            $view_blog = "SELECT * from blog WHERE author='$admin_firstname'";
+                            $view_blog = "SELECT * from blog";
 
                             $run_view_blog = mysqli_query($conn, $view_blog);
 
                             while ($row_blog = mysqli_fetch_array($run_view_blog)) {
 
                                 $blog_id = $row_blog['id'];
+
+                                $blog_author = $row_blog['author'];
 
                                 $blog_title = $row_blog['title'];
 
@@ -277,7 +279,7 @@
                                     </td>
 
                                     <td>
-                                        <?php echo $admin_firstname; ?>
+                                        <?php echo $blog_author; ?>
                                     </td>
 
                                     <td>
