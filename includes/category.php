@@ -5,6 +5,11 @@
 #category-css:visited {
     color: black;
 }
+
+.single{
+    padding-left: 10px;
+    padding-right: 10px;
+}
     </style>
 </head>
 <div class="right-blog-info text-left">
