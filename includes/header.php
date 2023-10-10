@@ -20,10 +20,10 @@
                         <a style="padding-left:10px;" href="terms.php" class="nav-item nav-link">Terms of Use</a>
                         <a style="padding-left:10px;" href="privacy.php" class="nav-item nav-link">Privacy Policy</a>
                     </div>
-                    <form class="d-flex ms-auto">
+                    <form class="d-flex ms-auto" action="search.php" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control search-input" placeholder="Search">
-                            <button id="searchbtn" type="button" class="btn btn-secondary"><i
+                            <input type="text" name="search" class="form-control search-input" placeholder="Search blog">
+                            <button id="searchbtn" name="submit" type="submit" class="btn btn-secondary"><i
                                     class="bi-search"></i></button>
                         </div>
                     </form>
