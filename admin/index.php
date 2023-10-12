@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 
@@ -38,7 +38,11 @@ if (!isset($_SESSION['admin_email'])) {
 
     $get_blog_count = "SELECT * FROM blog";
     $run_blog_count = mysqli_query($conn, $get_blog_count);
-    $count_blog = mysqli_num_rows($run_blog_count);    
+    $count_blog = mysqli_num_rows($run_blog_count);
+
+    $get_comments_count = "SELECT * FROM comments WHERE status = 'approved'";
+    $run_comments_count = mysqli_query($conn, $get_comments_count);
+    $count_comments = mysqli_num_rows($run_comments_count);
 
     ?>
     <!DOCTYPE html>
@@ -100,6 +104,21 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET["delete_categories"])) {
 
                         include('delete_categories.php');
+                    }
+
+                    if (isset($_GET['pending_comments'])) {
+
+                        include("pending_comments.php");
+                    }
+
+                    if (isset($_GET['approved_comments'])) {
+
+                        include("approved_comments.php");
+                    }
+
+                    if (isset($_GET['rejected_comments'])) {
+
+                        include("rejected_comments.php");
                     }
 
                     if (isset($_GET['insert_user'])) {

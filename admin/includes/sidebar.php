@@ -28,7 +28,9 @@
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- dropdown-toggle Starts -->
 
-                <i class="fa fa-user"> <?php echo $admin_firstname; ?></i>
+                <i class="fa fa-user">
+                    <?php echo $admin_firstname; ?>
+                </i>
 
                 <b class="caret"></b>
 
@@ -50,12 +52,12 @@
 
                 <li><!-- li Starts -->
 
-                    <a href="#">
+                    <a href="index.php?approved_comments">
 
                         <i class="fa fa-fw fa-envelope"></i> Comments
 
                         <span class="badge">
-                            <!-- add blog count here -->
+                        <?php echo $count_comments; ?>
                         </span>
 
 
@@ -78,7 +80,7 @@
 
                 </li><!-- li Ends -->
 
-            
+
                 <li><!-- li Starts -->
 
                     <a href="index.php?view_categories">
@@ -86,7 +88,7 @@
                         <i class="fa fa-fw fa-list-alt"></i> Blog Categories
 
                         <span class="badge">
-                        <?php echo $count_b_categories ?>
+                            <?php echo $count_b_categories ?>
                         </span>
 
 
@@ -189,11 +191,28 @@
 
             <li>
 
-                <a href="#">
+                <a href="#" data-toggle="collapse" data-target="#comments">
 
                     <i class="fa fa-fw fa-comments"></i> View Comments
+                    <i class="fa fa-fw fa-caret-down"></i>
 
                 </a>
+
+                <ul id="comments" class="collapse">
+
+                    <li>
+                        <a href="index.php?pending_comments"> Pending Comments </a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?approved_comments"> Approved Comments </a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?rejected_comments"> Rejected Comments </a>
+                    </li>
+
+                </ul>
 
             </li>
 
