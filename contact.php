@@ -2,7 +2,7 @@
 	<style>
 		.contactus-css {
 			padding: 10px;
-			
+
 		}
 
 		.row-css {
@@ -125,12 +125,8 @@
 		<!--Grid column-->
 		<div class="col-md-3 text-center">
 			<ul class="list-unstyled mb-0">
-				<li><i style="color: #A30000" class="fa fa-map-marker fa-2x"></i>
-					<p>Germany</p>
-				</li>
-
-				<li><i style="color: #A30000" class="fa fa-phone mt-4 fa-2x"></i>
-					<p>+49 15733101140</p>
+				<li><i style="color: #A30000" class="fa fa-map-marker mt-4 fa-2x"></i>
+					<p>India</p>
 				</li>
 
 				<li><i style="color: #A30000" class="fa fa-envelope mt-4 fa-2x"></i>

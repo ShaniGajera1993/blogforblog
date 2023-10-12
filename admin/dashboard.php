@@ -37,7 +37,9 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-                        <div class="huge"> <?php echo $count_blog; ?> </div>
+                        <div class="huge">
+                            <?php echo $count_blog; ?>
+                        </div>
 
                         <div>Blogs</div>
 
@@ -49,15 +51,15 @@
 
             <a href="index.php?view_blogs">
 
-            <div class="panel-footer"><!-- panel-footer Starts -->
+                <div class="panel-footer"><!-- panel-footer Starts -->
 
-                <span class="pull-left"> View Details </span>
+                    <span class="pull-left"> View Details </span>
 
-                <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+                    <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 
-                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-            </div><!-- panel-footer Ends -->
+                </div><!-- panel-footer Ends -->
 
             </a>
 
@@ -128,7 +130,9 @@
 
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-                        <div class="huge"> </div>
+                        <div class="huge">
+                            <?php echo $count_comments; ?>
+                        </div>
 
                         <div>Comments</div>
 
@@ -139,16 +143,16 @@
             </div><!-- panel-heading Ends -->
 
 
+            <a href="index.php?approved_comments">
+                <div class="panel-footer"><!-- panel-footer Starts -->
 
-            <div class="panel-footer"><!-- panel-footer Starts -->
+                    <span class="pull-left"> View Details </span>
 
-                <span class="pull-left"> View Details </span>
+                    <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 
-                <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
+                    <div class="clearfix"></div>
 
-                <div class="clearfix"></div>
-
-            </div><!-- panel-footer Ends -->
+                </div><!-- panel-footer Ends -->
 
             </a>
 
@@ -243,7 +247,7 @@
                         </thead><!-- thead Ends -->
 
                         <tbody><!-- tbody Starts -->
-                        
+
                             <?php
 
                             $i = 0;
