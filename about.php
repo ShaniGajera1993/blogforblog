@@ -15,7 +15,7 @@
     </div>
     <div class="container blog-css">
         <div class="row">
-            <div class="col-md-8 p-4">
+            <div style="text-align: justify; text-justify: inter-word; color:black;" class="col-md-8 p-4">
                 <div class="blog-grid-top">
 
                     <div class="blog_info_left_grid">
@@ -47,7 +47,6 @@
                         I will keep posting more important posts on my Website for all of you. Please give your support
                         and love.<br><br>
                         Thanks For Visiting Our Site<br><br>
-                        <a href="contact.php">Contact Us !</a>
                     </p>
                 </div>
             </div>
