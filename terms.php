@@ -15,7 +15,7 @@
     </div>
     <div class="container blog-css">
         <div class="row">
-            <div class="col-md-8 p-4">
+            <div style="text-align: justify; text-justify: inter-word; color:black;" class="col-md-8 p-4">
                 <div class="blog-grid-top">
 
 
