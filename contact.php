@@ -1,3 +1,52 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+
+require_once 'phpmailer/Exception.php';
+require_once 'phpmailer/PHPMailer.php';
+require_once 'phpmailer/SMTP.php';
+
+$mail = new PHPMailer(true);
+
+$alert = '';
+
+if(isset($_POST['submit'])){
+  $name = $_POST['name'];
+
+  echo $name;
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
+
+  try{
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'contactblogforblog@gmail.com'; // Gmail address which you want to use as SMTP server
+    $mail->Password = 'aggbecxmtfmschds'; // Gmail address Password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = '587';
+
+    $mail->setFrom('contactblogforblog@gmail.com'); // Gmail address which you used as SMTP server
+    $mail->addAddress('contactblogforblog@gmail.com'); // Email address where you want to receive emails (you can use any of your gmail address including the gmail address which you used as SMTP server)
+
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
+    $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $message</h3>";
+
+    $mail->send();
+    $alert =  '<script>alert("Thank you for contacting us.")</script>';
+	header("Location: index.php");
+	exit; 
+  } catch (Exception $e){
+    $alert = '<div class="alert-error">
+                <span>'.$e->getMessage().'</span>
+              </div>';
+  }
+}
+
+?>
 <head>
 	<style>
 		.contactus-css {
@@ -60,7 +109,7 @@
 
 		<!--Grid column-->
 		<div class="col-md-9 mb-md-0 mb-5">
-			<form id="contact-form" name="contact-form" action="mail.php" method="POST">
+			<form id="contact-form" name="contact-form" action="contact.php" method="POST">
 
 				<!--Grid row-->
 				<div class="row row-css">
@@ -111,14 +160,12 @@
 					</div>
 				</div>
 				<!--Grid row-->
-
+				<div class="text-center text-md-left">
+					<button type="submit" class="btn btn-primary btn-contact" name="submit">Send</button>
+				</div>
 			</form>
 
-			<div class="text-center text-md-left">
-				<a class="btn btn-primary btn-contact"
-					onclick="document.getElementById('contact-form').submit();">Send</a>
-			</div>
-			<div class="status"></div>
+			
 		</div>
 		<!--Grid column-->
 

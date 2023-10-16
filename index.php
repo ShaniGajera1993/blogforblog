@@ -61,7 +61,7 @@
                     include("admin/includes/db.php");
 
                     // Define the number of blog posts to display per page
-                    $postsPerPage = 8;
+                    $postsPerPage = 4;
 
                     // Get the current page number from the URL
                     if (isset($_GET['page'])) {
