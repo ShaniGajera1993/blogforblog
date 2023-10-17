@@ -1,53 +1,11 @@
-<?php
+<html>
 
-use PHPMailer\PHPMailer\PHPMailer;
-
-
-require_once 'phpmailer/Exception.php';
-require_once 'phpmailer/PHPMailer.php';
-require_once 'phpmailer/SMTP.php';
-
-$mail = new PHPMailer(true);
-
-$alert = '';
-
-if(isset($_POST['submit'])){
-  $name = $_POST['name'];
-
-  echo $name;
-  $email = $_POST['email'];
-  $subject = $_POST['subject'];
-  $message = $_POST['message'];
-
-  try{
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'contactblogforblog@gmail.com'; // Gmail address which you want to use as SMTP server
-    $mail->Password = '#'; // Gmail address Password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = '587';
-
-    $mail->setFrom('contactblogforblog@gmail.com'); // Gmail address which you used as SMTP server
-    $mail->addAddress('contactblogforblog@gmail.com'); // Email address where you want to receive emails (you can use any of your gmail address including the gmail address which you used as SMTP server)
-
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $message</h3>";
-
-    $mail->send();
-    $alert =  '<script>alert("Thank you for contacting us.")</script>';
-	header("Location: index.php");
-	exit; 
-  } catch (Exception $e){
-    $alert = '<div class="alert-error">
-                <span>'.$e->getMessage().'</span>
-              </div>';
-  }
-}
-
-?>
 <head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="admin/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<style>
 		.contactus-css {
 			padding: 10px;
@@ -96,95 +54,110 @@ if(isset($_POST['submit'])){
 		}
 	</style>
 </head>
-<section class="main-css">
 
-	<!--Section heading-->
-	<h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-	<!--Section description-->
-	<p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us
-		directly. Our team will come back to you within
-		a matter of hours to help you.</p>
+<body>
+	<section class="main-css">
 
-	<div class="row contactus-css">
+		<!--Section heading-->
+		<h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+		<!--Section description-->
+		<p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us
+			directly. Our team will come back to you within
+			a matter of hours to help you.</p>
 
-		<!--Grid column-->
-		<div class="col-md-9 mb-md-0 mb-5">
-			<form id="contact-form" name="contact-form" action="contact.php" method="POST">
+		<div class="row contactus-css">
 
-				<!--Grid row-->
-				<div class="row row-css">
+			<!--Grid column-->
+			<div class="col-md-9 mb-md-0 mb-5">
+				<form id="contact-form" name="contact-form" action="index.php" method="POST">
 
-					<!--Grid column-->
-					<div class="col-md-6">
-						<div class="md-form mb-0">
-							<input type="text" id="name" name="name" placeholder="Your name"
-								class="form-control input-css">
+					<!--Grid row-->
+					<div class="row row-css">
+
+						<!--Grid column-->
+						<div class="col-md-6">
+							<div class="md-form mb-0">
+								<input type="text" id="name" name="name" placeholder="Your name"
+									class="form-control input-css">
+							</div>
 						</div>
-					</div>
-					<!--Grid column-->
+						<!--Grid column-->
 
-					<!--Grid column-->
-					<div class="col-md-6">
-						<div class="md-form mb-0">
-							<input type="text" id="email" placeholder="Your email" name="email"
-								class="form-control input-css">
+						<!--Grid column-->
+						<div class="col-md-6">
+							<div class="md-form mb-0">
+								<input type="text" id="email" placeholder="Your email" name="email"
+									class="form-control input-css">
+							</div>
 						</div>
-					</div>
-					<!--Grid column-->
-
-				</div>
-				<!--Grid row-->
-
-				<!--Grid row-->
-				<div class="row row-css">
-					<div class="col-md-12">
-						<div class="md-form mb-0">
-							<input type="text" id="subject" placeholder="Subject" name="subject"
-								class="form-control input-css">
-						</div>
-					</div>
-				</div>
-				<!--Grid row-->
-
-				<!--Grid row-->
-				<div class="row row-css">
-
-					<!--Grid column-->
-					<div class="col-md-12">
-
-						<div class="md-form">
-							<textarea type="text" id="message" placeholder="Your message" name="message" rows="2"
-								class="form-control md-textarea input-css"></textarea>
-						</div>
+						<!--Grid column-->
 
 					</div>
-				</div>
-				<!--Grid row-->
-				<div class="text-center text-md-left">
-					<button type="submit" class="btn btn-primary btn-contact" name="submit">Send</button>
-				</div>
-			</form>
+					<!--Grid row-->
 
-			
+					<!--Grid row-->
+					<div class="row row-css">
+						<div class="col-md-12">
+							<div class="md-form mb-0">
+								<input type="text" id="subject" placeholder="Subject" name="subject"
+									class="form-control input-css">
+							</div>
+						</div>
+					</div>
+					<!--Grid row-->
+
+					<!--Grid row-->
+					<div class="row row-css">
+
+						<!--Grid column-->
+						<div class="col-md-12">
+
+							<div class="md-form">
+								<textarea type="text" id="message" placeholder="Your message" name="message" rows="2"
+									class="form-control md-textarea input-css"></textarea>
+							</div>
+
+						</div>
+					</div>
+					<!--Grid row-->
+					<div class="text-center text-md-left">
+						<button type="submit" class="btn btn-primary btn-contact" name="submitcontact">Send</button>
+					</div>
+				</form>
+
+			</div>
+			<!--Grid column-->
+
+			<!--Grid column-->
+			<div class="col-md-3 text-center">
+				<ul class="list-unstyled mb-0">
+					<li><i style="color: #A30000" class="fa fa-map-marker mt-4 fa-2x"></i>
+						<p>India</p>
+					</li>
+
+					<li><i style="color: #A30000" class="fa fa-envelope mt-4 fa-2x"></i>
+						<p>shanikumargajera@gmail.com</p>
+					</li>
+				</ul>
+			</div>
+			<!--Grid column-->
+			<p style="padding-top: 4%;" class="text-center w-responsive">Copyright © 2023 BlogForBlog</p>
+
+
+
 		</div>
-		<!--Grid column-->
 
-		<!--Grid column-->
-		<div class="col-md-3 text-center">
-			<ul class="list-unstyled mb-0">
-				<li><i style="color: #A30000" class="fa fa-map-marker mt-4 fa-2x"></i>
-					<p>India</p>
-				</li>
+	</section>
 
-				<li><i style="color: #A30000" class="fa fa-envelope mt-4 fa-2x"></i>
-					<p>shanikumargajera@gmail.com</p>
-				</li>
-			</ul>
-		</div>
-		<!--Grid column-->
-		<p style="padding-top: 4%;" class="text-center w-responsive">Copyright © 2023 BlogForBlog</p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
 
 
-	</div>
+</body>
 
-</section>
+</html>

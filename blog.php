@@ -35,8 +35,11 @@ if (isset($_GET['blog_id'])) {
 
         if ($run_insert_comment) {
 
-            echo "<script>alert('Thank you for comment')</script>";
-            echo "<script>window.open('blog.php?blog_id=$blog_id','_self')</script>";
+            echo "<script>
+                window.onload = function() {
+                    $('#successModal').modal('show');
+                }
+            </script>";
         }
     }
 
@@ -147,6 +150,23 @@ if (isset($_GET['blog_id'])) {
                     </div>
                 </div>
             </div>
+            <!-- Success Modal -->
+            <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Comment Submitted</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Thanks for your comment. It will be displayed after approval.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="#modelbtn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-4">
                 <div class="row">
                     <?php include("includes/category.php"); ?>
@@ -157,6 +177,16 @@ if (isset($_GET['blog_id'])) {
     </div>
 
     <?php include("includes/footer.php") ?>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Wait for the modal to hide, then redirect to the same blog page
+        $('#successModal').on('hidden.bs.modal', function () {
+            window.location.href = 'blog.php?blog_id=<?php echo $blog_id; ?>';
+        });
+    </script>
+
 </body>
 
 </html>

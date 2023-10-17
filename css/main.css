@@ -53,7 +53,8 @@
 
 #loginbtn,
 #searchbtn, 
-#newsletterbtn{
+#newsletterbtn
+#modelbtn{
     border: 2px solid #A30000;
 }
 
