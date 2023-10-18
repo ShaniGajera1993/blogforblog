@@ -136,12 +136,12 @@
 					</li>
 
 					<li><i style="color: #A30000" class="fa fa-envelope mt-4 fa-2x"></i>
-						<p>shanikumargajera@gmail.com</p>
+						<p>contact@blogsforblog.com</p>
 					</li>
 				</ul>
 			</div>
 			<!--Grid column-->
-			<p style="padding-top: 4%;" class="text-center w-responsive">Copyright © 2023 BlogForBlog</p>
+			<p style="padding-top: 4%;" class="text-center w-responsive">Copyright © 2023 BlogsForBlog</p>
 
 
 

@@ -8,7 +8,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">
-                    <h2>BlogForBlog</h2>
+                    <h2><strong>BlogsForBlog</strong></h2>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
                     <div class="navbar-nav ms-2">
                         <a style="padding-left:10px;" href="index.php" class="nav-item nav-link active">Home</a>
                         <a style="padding-left:10px;" href="about.php" class="nav-item nav-link">About</a>
-                        <a style="padding-left:10px;" href="terms.php" class="nav-item nav-link">Terms of Use</a>
+                        <a style="padding-left:10px;" href="terms.php" class="nav-item nav-link">Terms and Conditions</a>
                         <a style="padding-left:10px;" href="privacy.php" class="nav-item nav-link">Privacy Policy</a>
                     </div>
                     <form class="d-flex ms-auto" action="search.php" method="post">
