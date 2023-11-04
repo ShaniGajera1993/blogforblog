@@ -1,1 +1,1 @@
-# blogforblog
+This GitHub repository hosts the source code and related resources for the core PHP-based website https://blogsforblog.com. Blogsforblog is a platform for sharing and discovering a wide range of blog articles on various topics.
